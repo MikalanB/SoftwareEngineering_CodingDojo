@@ -1,0 +1,23 @@
+#button1 {
+    color: aqua;
+    border-radius: 100px;
+    background-color: white;
+    font-size: 20px;
+    width: 250px;
+    padding: 14px 40px;
+}
+
+#button2 {
+    color: white;
+    border-radius: 50px;
+    background-color: green;
+    font-size: 20px;
+}
+
+#button3 {
+    color: white;
+    background-color: blue;
+    font-size: 20px;
+    padding: 12px 28px;
+    box-shadow: 10px 5px 5px black;
+}
