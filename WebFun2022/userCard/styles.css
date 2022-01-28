@@ -1,0 +1,78 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    align-items: left;
+    justify-content: center;
+    background-color: white;
+}
+
+.box1 {
+    width: 650px;
+    height: 350px;
+    border-style: solid;
+    border-color: slategrey;
+    display: flex; 
+    flex-direction: column;
+}
+
+.picBlock  {
+    background-color:cyan;
+    height: 120px;
+}
+
+.picBlock img {
+    position: relative;
+    top: 40px;
+    left: 50px
+}
+
+.name {
+    height: 50px;
+    padding-left: 70px;
+    padding-top: 30px;
+}
+
+.location {
+    height: 30px;
+    width: 100px;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    padding-left: 70px;
+    margin-bottom: 0px;
+}
+
+.location h3 {
+    height: 20px;
+    padding-left: 10px;
+}
+
+.location img {
+    height: 20px;
+}
+
+.bio {
+    height: 70px;
+    display: flex;
+    flex-direction: column;
+}
+
+.bio h4 {
+    height: 0px;
+    margin: 10px;
+    padding-left: 60px;
+}
+
+.edit {
+    display: flex;
+    flex-direction: row;
+    padding-left: 70px;
+}
+
+.edit a {
+    padding-left: 10px;
+}
+
+.edit img {
+    height: 20px;
+}
