@@ -1,0 +1,36 @@
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.col {
+    height: 50px;
+    flex: 1;
+    background-color: thistle;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    margin: 10px;
+}
+
+.col-2 {
+    height: 50px;
+    flex: 2;
+    background-color: thistle;
+    display: flex;
+    align-items: center;
+    text-align: left;
+    padding-left: 10px;
+    margin: 10px;
+}
+
+.col-3 {
+    height: 50px;
+    flex: 3;
+    background-color: thistle;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    margin: 10px;
+}
