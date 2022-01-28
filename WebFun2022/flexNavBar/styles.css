@@ -1,0 +1,40 @@
+.nav {
+    display: flex;
+    height: 50px;
+    background-color: slategrey;
+    justify-content: space-between;
+}
+
+.nav-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 10px;
+    color: white;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    padding-right: 10px;
+}
+
+li {
+    list-style-type: none;
+}
+
+li a {
+    padding: 10px 10px 10px 10px;
+    color: lightgray;
+    text-decoration: none;
+}
+
+.active {
+    color: white;
+}
+
+.btn {
+    background-color: rgb(50, 147, 185);
+    color: white;
+    box-shadow: 2px 2px 2px 4px black;
+}
