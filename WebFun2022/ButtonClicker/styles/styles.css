@@ -1,0 +1,119 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+
+#wrapper { 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#nav-bar {
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(158, 155, 155);
+    align-items: center;
+    width: 58%;
+}
+
+.nav-title {
+    padding-left: 20px;
+    color: black;
+}
+
+.search-bar {
+    width: 400px;
+}
+
+.login-button {
+    margin-right: 20px;
+    background-color:  rgb(59, 135, 182);
+}
+
+#container1 {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 58%;
+}
+
+#box1 {
+    height: 200px;
+    width: 500px;
+    background-color: white;
+    border-style: solid;
+    border-color: lightslategrey;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#likes-button1 {
+    width: 80px;
+    height: 30px;
+    background-color: gold;
+    border-style: solid;
+    border-color: black;
+    box-shadow: 5px 5px grey;
+}
+
+#box2 {
+    height: 150px;
+    width: 200px;
+    background-color: white;
+    border-style: solid;
+    border-color: lightslategrey;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#box2 h3 {
+    padding-left: 25px;
+}
+
+.add-def-button {
+    width: 150px;
+    height: 30px;
+    background-color: rgb(99, 192, 99);
+}
+
+#container2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 58%;
+    margin-top: 30px;
+}
+
+#box3 {
+    height: 200px;
+    width: 500px;
+    background-color: white;
+    border-style: solid;
+    border-color: lightslategrey;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.definition2 {
+    width: 350px;
+}
+
+#likes-button2 {
+    width: 80px;
+    height: 30px;
+    background-color: gold;
+    border-style: solid;
+    border-color: black;
+    box-shadow: 5px 5px grey;
+}
