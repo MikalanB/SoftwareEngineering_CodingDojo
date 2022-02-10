@@ -38,31 +38,53 @@ print(user3.name)
 
 # make users make a deposit in their accounts
 user1.make_deposit(500)
-user2.make_deposit(300)
-user3.make_deposit(450)
-
-# test to display_user_balance
+user1.make_deposit(250)
+user1.make_deposit(300)
+# check user 1 balance
 user1.display_user_balance()
+#user1 makes a withdrawl
+user1.make_withdrawl(100)
+# check user 1 balance
+user1.display_user_balance()
+
+# user2 2 deposits deposits
+user2.make_deposit(300)
+user2.make_deposit(299)
+# test to display_user_balance
 user2.display_user_balance()
+# user2 2 withdrawls
+user2.make_withdrawl(130)
+user2.make_withdrawl(80)
+# test to display_user_balance
+user2.display_user_balance()
+
+
+# other user deposit
+user3.make_deposit(450)
+# user3 3 withdrawls
+user3.make_withdrawl(100)
+user3.make_withdrawl(30)
+user3.make_withdrawl(80)
+# test to display_user_balance
 user3.display_user_balance()
 
 # test to make a withdrawl
-user1.make_withdrawl(100)
-user2.make_withdrawl(130)
-user3.make_withdrawl(80)
+# user1.make_withdrawl(100)
+# user2.make_withdrawl(230)
+# user3.make_withdrawl(80)
 
 # test display_user_balance
-user1.display_user_balance()
-user2.display_user_balance()
-user3.display_user_balance()
+# user1.display_user_balance()
+# user2.display_user_balance()
+# user3.display_user_balance()
 
 # transfer balance to another user test
-user1.transfer_money(user3.name, 40)
-user2.transfer_money(user1.name, 100)
-user3.transfer_money(user1.name, 120)
+user1.transfer_money(user3, 100)
+# user2.transfer_money(user1.name, 100)
+# user3.transfer_money(user1.name, 120)
 
 # test display_user_balance
 user1.display_user_balance()
-user2.display_user_balance()
+# user2.display_user_balance()
 user3.display_user_balance()
 
