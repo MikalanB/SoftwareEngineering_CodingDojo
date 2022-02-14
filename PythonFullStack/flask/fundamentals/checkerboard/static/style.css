@@ -1,0 +1,42 @@
+#wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#title-bar {
+    display: flex;
+    justify-content: center;
+}
+
+#title {
+    display: flex;
+    justify-content: center;
+    background-color: tan;
+    width: 50%;
+    margin-top:10px;
+    margin-bottom: 20px;
+}
+
+#title h1 {
+    color: red;
+}
+
+#checkerboard-box {
+    display: flex;
+    justify-content: center;
+}
+
+tr {
+    height:65px;
+}
+
+.color-1 {
+    width: 65px;
+    background-color: tan
+}
+
+.color-2 {
+    width: 65px;
+    background-color: red;
+}
