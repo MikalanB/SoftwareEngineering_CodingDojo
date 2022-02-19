@@ -19,7 +19,7 @@
 
         }
         .container {
-            width: 55%;
+            width: 65%;
             margin-top: 45px;
             background-color: #b784a7;
             padding-top: 30px; 
@@ -30,6 +30,10 @@
 
         a {
             margin-top: 20px;
+        }
+        li {
+            list-style: none;
+            margin-right: 5px;
         }
     </style>
     <title>Read All</title>
@@ -43,6 +47,7 @@
                 <th scope="col">Full Name</th>
                 <th scope="col">Email</th>
                 <th scope="col">Created At</th>
+                <th scope="col">Actions</th>
             </tr>
             {% for user in users %}
             <tr scope="row">
@@ -50,6 +55,13 @@
                 <td>{{user.first_name}} {{user.last_name}}</td>
                 <td>{{user.email}}</td>
                 <td>{{user.created_at}}</td>
+                <td>
+                    <ul class="list-group list-group-horizontal">
+                        <li class="list-group-item-link"><a href="/show/{{user.id}}">Show |</a></li>
+                        <li class="list-group-item-link"><a href="/edit/{{user.id}}"> Edit | </a></li>
+                        <li class="list-group-item-link"><a href="/delete/{{user.id}}"> Delete</a></li>
+                    </ul>
+                </td>
             </tr>
             {% endfor %}
         </table>

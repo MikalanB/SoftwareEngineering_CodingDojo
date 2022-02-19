@@ -14,7 +14,6 @@
             justify-content: center;
             align-items: center;
         }
-
         .header1 {
             width: 45%;
             display: flex;
@@ -23,7 +22,7 @@
             align-items: center;
             margin-top: 50px; 
         }
-        
+
         h1 {
             text-align: center;
             color: #b19cd9
@@ -38,30 +37,38 @@
             padding-right: 40px;
             padding-bottom: 30px; 
         }
+
+        .container-2 {
+            width: 45%;
+            display: flex;
+            margin-top: 50px;
+        }
+        .page-switch {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            width: 22%;
+        }
     </style>
-    <title>Create User</title>
+    <title>Show User {{user_info.first_name}}</title>
 </head>
 <body>
     <div class="header1">
-        <h1>Add a User</h1>
-        <a href="/users">Home</a>
+        <h1> User {{user_info.id }}</h1>
+        <a class="btn btn-light" href="/users" role="button">Home</a>
     </div>
     <div class="container">
-        <form action="/add_user" method="post">
-            <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="floatingInput" placeholder="First name"name="first_name">
-                <label for="first_name">First Name: </label>
-            </div>
-            <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="floatingInput" placeholder="Last name" name="last_name">
-                <label for="floatingInput">Last Name: </label>
-            </div>
-            <div class="form-floating mb-3">
-                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" name=email>
-                <label for="floatingInput">Email address</label>
-            </div>
-            <input type="submit" value="Add User">
-        </form>
+        <p>Full Name: {{user_info.first_name}} {{user_info.last_name}}</p>
+        <p>Email: {{user_info.email}}</p>
+        <p>Created On: {{user_info.created_at}}</p>
+        <p>Last Updated On: {{user_info.updated_at}}</p>
+    </div>
+    <div class="container-2">
+        <div class="page-switch">
+            <a class="btn btn-light" href="/edit/{{user_info.id}}" role="button"> Edit</a>
+            <a class="btn btn-light" href="/delete/{{user_info.id}}" role="button">Delete</a>
+        </div>
     </div>
 </body>
 </html>

@@ -1,0 +1,31 @@
+body {
+    background-color: #fff0f5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.header1 {
+    width: 45%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px; 
+}
+
+h1 {
+    text-align: center;
+    color: #b19cd9
+
+}
+.container {
+    width: 45%;
+    margin-top: 45px;
+    background-color: #b784a7;
+    padding-top: 30px; 
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 30px; 
+}
