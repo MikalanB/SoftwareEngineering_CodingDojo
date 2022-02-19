@@ -30,13 +30,14 @@
         }
         
         .container {
-            width: 45%;
+            width: 55%;
             margin-top: 45px;
             background-color: #b784a7;
             padding-top: 30px; 
             padding-left: 40px;
             padding-right: 40px;
-            padding-bottom: 30px; 
+            padding-bottom: 30px;
+            border: 40px solid white; 
         }
     </style>
     <title>Create User</title>
@@ -44,7 +45,7 @@
 <body>
     <div class="header1">
         <h1>Add a User</h1>
-        <a href="/users">Home</a>
+        <a class="btn btn-light" href="/users" role="button">Home</a>
     </div>
     <div class="container">
         <form action="/add_user" method="post">
@@ -60,7 +61,7 @@
                 <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" name=email>
                 <label for="floatingInput">Email address</label>
             </div>
-            <input type="submit" value="Add User">
+            <input class="btn btn-light" type="submit" value="Add User">
         </form>
     </div>
 </body>

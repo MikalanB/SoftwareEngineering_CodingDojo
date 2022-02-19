@@ -35,7 +35,8 @@
             padding-top: 30px; 
             padding-left: 40px;
             padding-right: 40px;
-            padding-bottom: 30px; 
+            padding-bottom: 30px;
+            border: 40px solid white; 
         }
 
         .container-2 {
@@ -50,6 +51,10 @@
             align-items: center;
             width: 22%;
         }
+
+        h5 {
+            margin-top: 20px;
+        }
     </style>
     <title>Show User {{user_info.first_name}}</title>
 </head>
@@ -59,10 +64,10 @@
         <a class="btn btn-light" href="/users" role="button">Home</a>
     </div>
     <div class="container">
-        <p>Full Name: {{user_info.first_name}} {{user_info.last_name}}</p>
-        <p>Email: {{user_info.email}}</p>
-        <p>Created On: {{user_info.created_at}}</p>
-        <p>Last Updated On: {{user_info.updated_at}}</p>
+        <h5>Full Name: {{user_info.first_name}} {{user_info.last_name}}</h5>
+        <h5>Email: {{user_info.email}}</h5>
+        <h5>Created On: {{user_info.created_at}}</h5>
+        <h5>Last Updated On: {{user_info.updated_at}}</h5>
     </div>
     <div class="container-2">
         <div class="page-switch">
