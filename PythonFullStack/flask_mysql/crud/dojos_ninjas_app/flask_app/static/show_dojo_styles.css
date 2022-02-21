@@ -1,0 +1,27 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #603601;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+}
+
+h1 {
+    color: #CC9544;
+    margin-top: 50px;
+}
+
+table {
+    margin-top: 30px;
+}
+
+a {
+    margin-top: 20px;
+}

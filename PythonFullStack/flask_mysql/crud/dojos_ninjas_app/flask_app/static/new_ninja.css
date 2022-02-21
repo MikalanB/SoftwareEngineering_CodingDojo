@@ -1,0 +1,36 @@
+body {
+    display: flex;
+    flex-direction:column;
+    justify-content: space-between;
+    align-items: center;
+    width: 70%;
+    background-color: #603601;
+}
+.container {
+    width: 45%;
+    padding-left: 30px;
+    background-color: #361500;
+    margin-top: 60px;
+    padding-top: 25px;
+    padding-right: 30px;
+    height: 550px;
+}
+form {
+    margin-top: 10px;
+}
+
+label {
+    color: #CC9544;
+}
+
+h1 {
+    color: #CC9544;
+}
+
+#create_ninja {
+    margin-top: 30px;
+}
+
+#home {
+    margin-top: 30px;
+}
