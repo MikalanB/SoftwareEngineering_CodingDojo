@@ -51,7 +51,7 @@ class Author:
         return all_fav_books
 
     @classmethod
-    def add_favBook(cls,data):
-        query = cls.query_db("INSERT INTO favorites (author_id,book_id) SELECT authors.id, books.id FROM authors INNER JOIN books WHERE authors.id = %(author_id)s AND books.id = %(book_id)s;")
-        result = connectToMySQL("books_schema").query(query,data)
+    def add_fav_book(cls,data):
+        query = "INSERT INTO favorites (author_id,book_id) SELECT authors.id, books.id FROM authors INNER JOIN books WHERE authors.id = %(author_id)s AND books.id = %(book_id)s;"
+        result = connectToMySQL("books_schema").query_db(query,data)
         return result

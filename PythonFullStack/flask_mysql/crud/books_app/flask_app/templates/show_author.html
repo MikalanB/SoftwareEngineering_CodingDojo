@@ -34,14 +34,15 @@
         </div>
         <div class="container-2">
             <h1>Add Author's Favorite</h1>
-            <form action="/add_favBook/{{author.id}}">
+            <form action="/add_favBook/{{author.id}}", method="post">
                 <label for="author_name" class="col-sm-2 col-form-label col-form-label-lg">Name: </label>
-                <select class="form-select" name="fav_book">
+                <select class="form-select" name="book_id">
                     <option value="" disabled selected> Select a favorite book </option>
                     {% for book in books %}
                         <option value="{{book.id}}">{{book.title}}</option>
                     {% endfor %}
                 </select>
+                <input type="submit" class="btn btn-outline-light" value="Add" id="add_book">
             </form>
         </div>
     </div>
