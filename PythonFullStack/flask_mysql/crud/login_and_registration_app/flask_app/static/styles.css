@@ -1,0 +1,50 @@
+body {
+    background-color: #EEEDDE;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 90%;
+}
+
+.container {
+    margin-top: 50px;
+    width: 400px;
+    background-color: #203239;
+    border-radius: 25px;
+    padding-left: 50px;
+    height: 620px;
+}
+
+h1 {
+    color: #E0DDAA;
+    margin-top: 20px;
+}
+
+form {
+    width: 75%;
+    margin-top: 20px;
+}
+
+label {
+    color: #EEEDDE;
+}
+
+#process {
+    margin-top: 20px;
+    background-color: #E0DDAA;
+}
+
+.container-2 {
+    margin-top: 50px;
+    width: 400px;
+    background-color: #203239;
+    border-radius: 25px;
+    padding-left: 50px;
+}
+
+flash-message {
+    color: #E0DDAA;
+}
