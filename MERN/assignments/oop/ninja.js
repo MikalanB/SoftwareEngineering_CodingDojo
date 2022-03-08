@@ -11,7 +11,7 @@ class Ninja {
     }
 
     showStats () {
-        console.log(`${this.name}, ${this.health}, ${this.speed}, ${this.strength}`);
+        console.log(`Name: ${this.name}, Health: ${this.health}, Speed: ${this.speed}, Strength: ${this.strength}`);
     }
 
     drinkSake (ninja) {
@@ -22,7 +22,10 @@ class Ninja {
 
 const mikalan = new Ninja('Mikalan', 80, 5);
 //console.log(mikalan)
-mikalan.sayName();
-mikalan.showStats();
-mikalan.drinkSake(mikalan);
-mikalan.showStats();
+// mikalan.sayName();
+// mikalan.showStats();
+// mikalan.drinkSake(mikalan);
+// mikalan.showStats();
+
+
+module.exports = Ninja
