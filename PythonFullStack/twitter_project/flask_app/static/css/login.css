@@ -1,0 +1,149 @@
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: #3c4247;
+    font-family: "Helvetica Neue", Roboto, "Segoe UI", Calibri, sans-serif;
+    align-items: center;
+    justify-content: center;
+    width: 65%;
+}
+
+.container-1 {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    margin-top: 150px;
+    margin-left: 450px;
+    border: 2px solid #657786;
+    border-radius: 25px;
+}
+
+#white-logo2 {
+    width: 50px;
+    height: 40px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+h5 {
+    color: #F5F8FA;
+    margin-bottom: 40px;
+    margin-right: 150px;
+}
+
+form {
+    margin-right: 30px;
+    margin-left: 30px;
+}
+
+label {
+    color: #AAB8C2;
+}
+
+/* .third-party-login {
+    margin-left: 60px;
+    margin-top: 300px;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+} */
+
+.g_id_signin {
+    width: 300px;
+    margin-bottom: 20px;
+}
+
+#appleid-signin {
+    height: 40px;
+}
+
+.line {
+    display: flex;
+    align-items: center;
+    justify-content: space-around
+}
+
+p {
+    margin-top: 12px;
+    color: white;
+    margin-right: 5px;
+    margin-left: 5px;
+    
+}
+
+hr {
+    width: 140px;
+    color: white;
+}
+
+.outer-box {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-bottom: 25px;
+}
+
+.form-control:valid {
+    background-color: black;
+    border-color: #1DA1F2;
+    color: white;
+    height: 55px;
+    width: 300px;
+}
+
+.form-label:click {
+    color: #1DA1F2
+}
+
+#dob-label {
+    margin-top: 4px;
+    color: white;
+    height: 25px;
+}
+
+.dob-fineprint {
+    color: #AAB8C2;
+    font-size: 12px;
+    margin-bottom: 15px; 
+}
+
+#next {
+    margin-top: 20px;
+    background-color: #F5F8FA;
+    color: black;
+    width: 100%;
+    border-radius: 25px;
+    margin-bottom: 20px
+}
+
+#sign-in {
+    margin-top: 10px;
+    color: white;
+    background-color: black;
+    border-color: #AAB8C2;
+    border-radius: 25px;
+    width: 100%;
+    margin-bottom: 80px;
+}
+
+#signup2 {
+    color: #1DA1F2;
+}
+
+form i {
+    margin-left: -30px;
+    cursor: pointer;
+    color: white;
+}

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <meta name="google-signin-client_id" content="166171791099-pu364q2u8tp8etoi1h4gl0ccme7oq3a6.apps.googleusercontent.com">
+    <meta name="appleid-signin-client-id" content="[CLIENT_ID]">
+    <meta name="appleid-signin-scope" content="[SCOPES]">
+    <meta name="appleid-signin-redirect-uri" content="[REDIRECT_URI]">
+    <meta name="appleid-signin-state" content="[STATE]">
+    <meta name="appleid-signin-nonce" content="[NONCE]">
+    <meta name="appleid-signin-use-popup" content="true">
+    <link rel = "icon" href = "https://help.twitter.com/content/dam/help-twitter/brand/logo.png">
+    <link href="https://twitter.com/i/flow/signup" rel="canonical" data-rh="true">
+    <title>Twitter. It's what's happening / Twitter</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="container-1">
+            <img src="{{url_for('static',filename = 'images/logo_background.png')}}" alt="logo background" id="logo-background">
+            <img src="{{url_for('static',filename = 'images/white_logo.png')}}" alt="twitter logo" id="twitter-logo">
+        </div>
+        <div class="container-2">
+            <img src="{{url_for('static',filename = 'images/white_logo.png')}}" alt="white-logo" id="white-logo">
+            <br>
+            <br>
+            <h1>Happening now</h1>
+            <br>
+            <h3>Join Twitter today.</h3>
+            <br>
+
+            <div id="google-sign-in-button">
+                <div id="g_id_onload"
+                    data-client_id="166171791099-pu364q2u8tp8etoi1h4gl0ccme7oq3a6.apps.googleusercontent.com"
+                    data-callback="handleCredentialResponse">
+                </div>
+                <div class="g_id_signin"
+                    data-type="standard"
+                    data-size="large"
+                    data-theme="outline"
+                    data-text="sign_in_with"
+                    data-shape="rectangular"
+                    data-logo_alignment="left">
+                </div>
+            </div>
+
+            <div class="apple-sign-in-button">
+                <div id="appleid-signin" data-color="white" data-border="true" data-type="sign in"></div>
+                <script type="text/javascript" src="https://appleid.cdn-apple.com/appleauth/static/jsapi/appleid/1/en_US/appleid.auth.js"></script>    
+            </div>
+            <div class="line">
+                <hr>
+                <p>or</p>
+                <hr>
+            </div>
+
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" id ="sign-up">
+                Sign up with phone or email
+            </button>
+            
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <img src="{{url_for('static',filename = 'images/white_logo.png')}}" alt="white-logo" id="white-logo2">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <h5 class="modal-title" id="exampleModalLabel">Create your account</h5>
+                        {% with messages = get_flashed_messages(with_categories=true) %}
+                            {% if messages %} 
+                                {% for category, message in messages %}
+                                    <p class="text-danger {{ category }}">{{message}}</p>
+                                {% endfor %}
+                            {% endif %}
+                        {% endwith %}
+                        <form action="/sign_up" method="post">
+                            <div class="form-floating mb-3" id="form-1">
+                                <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com" name="name">
+                                <label for="floatingInput">Name</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com" name="email">
+                                <label for="floatingInput">Email address</label>
+                            </div>
+                            <a href="/1">Use phone instead</a>
+                            <div class="outer-box">
+                                <label for="date-of-birth" class="form-label" id="dob-label">Date of birth</label>
+                                <label class="dob-fineprint">This will not be shown publicly. Confirm your own age, even if this account is for a business, a pet, or something else.</label>
+                                <div class="box">
+                                    <div class="form-floating">
+                                        <select name="month" class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                                            <option value="" disabled selected></option>
+                                            <option value="1">January</option>
+                                            <option value="2">February</option>
+                                            <option value="3">March</option>
+                                            <option value="4">April</option>
+                                            <option value="5">May</option>
+                                            <option value="6">June</option>
+                                            <option value="7">July</option>
+                                            <option value="8">August</option>
+                                            <option value="9">September</option>
+                                            <option value="10">October</option>
+                                            <option value="11">November</option>
+                                            <option value="12">December</option>
+                                        </select>
+                                        <label for="floatingSelect">Month</label>
+                                    </div>  
+                                    <div class="form-floating">
+                                        <select name="day" class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                                            <option value="" disabled selected></option>
+                                        </select>
+                                        <label for="floatingSelect">Day</label>
+                                    </div>
+                                    <div class="form-floating">
+                                        <select name="year" class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                                            <option value="" disabled selected></option>
+                                        </select>
+                                        <label for="floatingSelect">Year</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <input class="btn" type="submit" value="Next" id="next">
+                            </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                </div>
+
+            <p id="fine-print">By signing up, you agree to the <a href="https://twitter.com/en/tos" target="blank">Terms of Service</a> and <a href="https://twitter.com/en/privacy" target="blank"> Privacy Policy</a>, including <a href="https://help.twitter.com/en/rules-and-policies/twitter-cookies" target="blank">Cookie Use</a>.</p>
+            <br>
+            <h5>Already have an account?</h5>
+            <div class="d-grid gap-2" id ="sign-in">
+                <a id ="sign-in" class="btn btn-dark" href="/login-page" role="button">Sign in</a>
+            </div>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <a href="https://about.twitter.com/en" style="color: rgb(110, 118, 125)" target="blank">About</a>
+        <a href="https://help.twitter.com/en" style="color: rgb(110, 118, 125)" target="blank">Help Center</a>
+        <a href="https://twitter.com/en/tos" style="color: rgb(110, 118, 125)" target="blank">Terms of Service</a>
+        <a href="https://twitter.com/en/privacy" style="color: rgb(110, 118, 125)" target="blank">Privacy Policy</a>
+        <a href="https://help.twitter.com/en/rules-and-policies/twitter-cookies" style="color: rgb(110, 118, 125)" target="blank">Cookie Policy</a>
+        <a href="https://help.twitter.com/en/resources/accessibility" style="color: rgb(110, 118, 125)" target="blank">Accessibility</a>
+        <a href="https://business.twitter.com/en/help/troubleshooting/how-twitter-ads-work.html?ref=web-twc-ao-gbl-adsinfo&utm_source=twc&utm_medium=web&utm_campaign=ao&utm_content=adsinfo" style="color: rgb(110, 118, 125)" target="blank"> Ads Info</a>
+        <a href="https://blog.twitter.com/" style="color: rgb(110, 118, 125)" target="blank">Blog</a>
+        <a href="https://status.twitterstat.us/" style="color: rgb(110, 118, 125)" target="blank">Status</a>
+        <a href="https://careers.twitter.com/" style="color: rgb(110, 118, 125)" target="blank">Careers</a>
+        <a href="https://about.twitter.com/en/who-we-are/brand-toolkit" style="color: rgb(110, 118, 125)" target="blank">Brand Resources</a>
+        <a href="https://ads.twitter.com/login?ref=gl-tw-tw-twitter-advertise" style="color: rgb(110, 118, 125)" target="blank">Advertising</a>
+        <a href="https://marketing.twitter.com/en" style="color: rgb(110, 118, 125)" target="blank">Marketing</a>
+        <a href="https://business.twitter.com/?ref=web-twc-ao-gbl-twitterforbusiness&utm_source=twc&utm_medium=web&utm_campaign=ao&utm_content=twitterforbusiness" style="color: rgb(110, 118, 125)" target="blank">Twitter for Business</a>
+        <a href="https://developer.twitter.com/en" style="color: rgb(110, 118, 125)" target="blank">Developers</a>
+        <a href="https://developer.twitter.com/en" style="color: rgb(110, 118, 125)" target="blank">Directory</a>
+        <a href="https://twitter.com/settings/account/personalization" style="color: rgb(110, 118, 125)" target="blank">Settings</a>
+        <p style="color: rgb(110, 118, 125); font-size: 12px;">© 2022 Twitter, Inc</p>
+    </footer>
+
+    <script>
+        function handleCredentialResponse(response) {
+           // decodeJwtResponse() is a custom function defined by you
+           // to decode the credential response.
+        const responsePayload = decodeJwtResponse(response.credential);
+    
+        console.log("ID: " + responsePayload.sub);
+        console.log('Full Name: ' + responsePayload.name);
+        console.log('Given Name: ' + responsePayload.given_name);
+        console.log('Family Name: ' + responsePayload.family_name);
+        console.log("Image URL: " + responsePayload.picture);
+        console.log("Email: " + responsePayload.email);
+    }
+    </script>
+    
+    <script src="{{url_for('static', filename='js/script.js')}}"></script>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script type="text/javascript" src="https://appleid.cdn-apple.com/appleauth/static/jsapi/appleid/1/en_US/appleid.auth.js"></script>
+</body>
+</html>

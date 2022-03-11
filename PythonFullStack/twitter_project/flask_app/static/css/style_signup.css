@@ -1,0 +1,92 @@
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: black;
+    font-family: "Helvetica Neue", Roboto, "Segoe UI", Calibri, sans-serif;
+    align-items: center;
+    justify-content: center;
+    width: 65%;
+}
+
+.container-1 {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin-top: 300px;
+    margin-left: 450px;
+    border: 2px solid #657786;
+    border-radius: 25px;
+}
+
+#white-logo2 {
+    width: 50px;
+    height: 40px;
+    margin-left: 300px;
+    margin-bottom: 15px;
+    margin-top: 30px;
+}
+
+h5 {
+    color: #F5F8FA;
+    margin-bottom: 40px;
+    margin-left: 30px;
+}
+
+form {
+    margin-right: 30px;
+    margin-left: 30px;
+}
+
+label {
+    color: #AAB8C2;
+}
+
+.outer-box {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-bottom: 25px;
+}
+
+.form-control:valid {
+    background-color: black;
+    border-color: #1DA1F2;
+    color: white;
+    height: 55px;
+}
+
+.form-select {
+    width: 150px;
+    background-color: black;
+    border-color: #1DA1F2;
+    color: white;
+    padding-right: 40px;
+}
+
+#dob-label {
+    margin-top: 4px;
+    color: white;
+    height: 25px;
+}
+
+.dob-fineprint {
+    color: #AAB8C2;
+    font-size: 12px;
+    margin-bottom: 15px; 
+}
+
+#next {
+    margin-left: 50px;
+    margin-top: 20px;
+    background-color: #657786;
+    width: 80%;
+    border-radius: 25px;
+    margin-bottom: 20px
+}

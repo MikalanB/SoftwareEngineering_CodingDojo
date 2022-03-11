@@ -1,0 +1,54 @@
+body {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    background-color:  black;
+    font-family: "Helvetica Neue", Roboto, "Segoe UI", Calibri, sans-serif;
+    justify-content: space-between;
+}
+
+.container-1 {
+    border-right: 3px solid #AAB8C2;
+    height: 100%;
+    width: 40%;
+}
+
+#white-logo2 {
+    width: 50px;
+    height: 40px;
+    margin-left: 230px;
+    margin-top: 15px;
+}
+
+.container-2 {
+    border-right: 3px solid #AAB8C2;
+    height: 100%;
+    width: 40%;
+}
+
+.container-3 {
+    height: 100%;
+    width: 40%;
+}
+
+h4, p {
+    color: #F5F8FA;
+}
+
+.nav-bar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.bar-group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 30px;
+}
+
+#sign-up{
+    background-color: #1496e7;
+    color: white;
+}
