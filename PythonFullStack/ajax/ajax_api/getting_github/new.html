@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+<script>
+    $(document).ready(function () {
+        $('#userButton').click(function () {
+            var user = $('#username').val()
+            $('#username').val("")
+            console.log(user)
+            $.ajax({
+                //Where to go
+                url: `https://api.github.com/users/${user}`,
+                // method
+                method: 'get'
+            })
+                // what to do with the response
+                .done(function (result) {
+                    console.log('result', result)
+                    $('#gitInfo').html(
+                        `<h3>UserName: ${result.login}</h3>
+                        <img src="${result.avatar_url}" alt="avatar">`
+                    )
+                })
+                .fail(function (error) {
+                    console.log('error', error)
+                })
+        })
+    })
+</script>
+
+<body>
+    <h1>Look Here Let's Play with API's!!</h1>
+    <div id="gitInfo">This should change</div>
+    <input id="username" type="text">
+    <button id="userButton">Click Me For A User</button>
+</body>
+
+</html>

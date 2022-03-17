@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="/new_friend">Add a friend</a>
+    <a href="/new_pet">Add a pet</a>
+    <a href="/all_pets">All Pets</a>
+
+    <h3> All Friends </h3>
+    {% for one_friend in friends %}
+        <p><a href="/{{ one_friend.id }}"> {{ one_friend.first_name }} </a></p>
+        <p> {{ one_friend.last_name }}</p>
+        <p> {{ one_friend.occupation }}</p>
+    {% endfor%}
+
+</body>
+</html>

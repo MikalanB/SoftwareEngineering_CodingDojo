@@ -1,0 +1,22 @@
+[Unit]
+Description=Gunicorn instance
+After=network.target
+[Service]
+User=ubuntu
+Group=www-data
+WorkingDirectory=/home/ubuntu/car_dealz
+Environment="PATH=/home/ubuntu/car_dealz/venv/bin"
+ExecStart=/home/ubuntu/car_dealz/venv/bin/gunicorn --workers 3 --bind unix:car_dealz.sock -m 007 wsgi:application
+[Install]
+WantedBy=multi-user.target
+
+server {
+    listen 80;
+    server_name 54.197.15.181;
+    location / {
+        include proxy_params;
+        proxy_pass http://unix:/home/ubuntu/car_dealz/car_dealz.sock;
+    }
+}
+
+sudo ln -s /etc/nginx/sites-available/car_dealz /etc/nginx/sites-enabled

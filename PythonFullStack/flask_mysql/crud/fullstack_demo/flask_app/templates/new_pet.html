@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Add a new pet!!!</h1>
+    <form action="/create_pet" method="post">
+        <label for="name">Name:</label>
+        <input type="text" name="pet_name">
+        <label for="Age">Age:</label>
+        <input type="number" name="pet_age">
+        <label for="pet_type">Type:</label>
+        <input type="text" name="pet_type">
+
+
+        <label for="owner_id">Owner</label>
+        <select name="pet_owner_id">
+            {% for one_friend in friends %}
+                <option value="{{one_friend.id}}">{{one_friend.first_name}}</option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="Add pet!"/>
+    </form>
+</body>
+</html>

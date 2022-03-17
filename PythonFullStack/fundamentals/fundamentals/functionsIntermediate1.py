@@ -82,7 +82,7 @@ dojo = {
 }
 def printInfo(some_dict):
     for i in some_dict:
-        print(f'{len(some_dict[i])} {i.upper()}')
+        print(f'{len(some_dict[i])} {i.upper()} /n ')
         for j in some_dict[i]:
             print(j)
 
