@@ -1,0 +1,41 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+#navbar {
+    height: 100px;
+    background-color: sienna;
+}
+
+#navcontents {
+    width: 1080px;
+    height: 100%;
+    background-color: yellow;
+    margin: auto;
+}
+
+#container {
+    width: 1080px;
+    background-color: black;
+}
+
+#highlights {
+    height: 100px;
+    background-color: rgb(109, 48, 19);
+}
+
+#banner {
+    height: 100px;
+    background-color: rgb(201, 138, 109);
+}
+
+#banner-scroll {
+    height: 100px;
+    background-color: rgb(240, 92, 24);
+}
+
+#navbar {
+    height: 100px;
+    background-color: rgb(63, 36, 24);
+}

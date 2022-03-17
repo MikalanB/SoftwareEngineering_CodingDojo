@@ -249,7 +249,7 @@ li a {
 }
 
 .view-more {
-    height: 40px;
+    height: 35px;
     display: flex;
     align-items: center;
     flex-direction: row;

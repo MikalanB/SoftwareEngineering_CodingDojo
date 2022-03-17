@@ -1,0 +1,29 @@
+.ball{
+    background-color: black;
+    border-radius: 50%;
+    width: 500px;
+    height: 500px;
+
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.time{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: black;
+    position: relative;
+
+}
+.answer{
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    background-color: indigo;
+    color: ivory;
+}

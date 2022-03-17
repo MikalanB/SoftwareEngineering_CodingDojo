@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/styles.css">
+    <title>Succulent Shop Belt Exam - Mikalan Ballentine</title>
+</head>
+<body>
+    <div id="container">
+        <div id="nav-bar">
+            <div class="logo-box">
+                <img class="logo" src="images/leaf.png" alt="leaf logo">
+                <h1 class="site-name">EasyBay</h1>
+            </div>
+            <input type="text" class="search-bar" placeholder="   Search for anything">
+            <h4>Sign In</h4>
+            <img class="shopping-cart" src="images/cart-dark.png" alt="picture of shopping cart" onclick="cartStatus()">
+        </div>
+        <div id="menu-bar">
+            <h5>Aeonium</h5>
+            <h5>Andormischus</h5>
+            <h5>Agave</h5>
+            <h5>Aloe</h5>
+            <h5>Anacampseros</h5>
+            <h5>Aristaloe</h5>
+            <h5>More...</h5>
+        </div>
+        <div id="heading">
+            <h1>Your Source for Serious Succulent Specialties</h1>
+        </div>
+        <div id="menu-discover">
+            <div id="column1">
+                <div class="box1">
+                    <p>Discover succulent varieties one pot or rack at a time!</p>
+                    <div class="discover-arrow">
+                        <h4>Discover</h4>
+                        <img class="arrow" src="images/arrow-light.png" alt="Image of white directional arrow">
+                    </div>
+                </div>
+                <div class="box2">
+                    <img onmouseover="switchImg(this)" onmouseout="currentImg(this)" class="succulents" src="images/succulents-1.jpg" alt="Picture of succulents in wooden container">
+                </div>
+            </div>
+            <div id="column2">
+                <div class="box3">
+                    <img class="aloeImg" src="images/aloe-m.jpg" alt="Aloe plant">
+                </div>
+                <div class="box4">
+                    <h4>Soothing Aloe</h4>
+                    <img class="arrow" src="images/arrow-light.png" alt="Picture of Arrow">
+                </div>
+            </div>
+        </div>
+        <div id="types-of-plants">
+            <div class="plants">
+                <img class="name-succulent" src="images/aeonium-s.jpg" alt="Picture of aeonium succulent">
+                <h4>Aeonium</h4>
+            </div>
+            <div class="plants">
+                <img class="name-succulent" src="images/aloe-s.jpg" alt="Picture of Aloe Succulent">
+                <h4>Aloe</h4>
+            </div>
+            <div class="plants">
+                <img class="name-succulent" src="images/cactus-s.jpg" alt="Picture of Cactus succulent">
+                <h4>Cactus</h4>
+            </div>
+            <div class="plants">
+                <img class="name-succulent" src="images/echeveria-s.jpg" alt="Picture of echeveria succulent">
+                <h4>Echeveria</h4>
+            </div>
+            <div class="plants">
+                <img class="name-succulent" src="images/sedum-s.jpg" alt="Picture of Sedum succulent">
+                <h4>Sedum</h4>
+            </div>
+            <div class="plants">
+                <img class="name-succulent" src="images/sempervivum-s.jpg" alt="Picture of sempervivum succulent">
+                <h4>Sempervivum</h4>
+            </div>
+        </div>
+        <div id="alert-message">
+            <img src="images/alert-dark.png" alt="Alert icon">
+            <p>This site makes use of third party cookies, by clicking "I accept" you agree to the terms outlined in our <a href="#">cookie policy.</a></p>
+            <button class="accept-button" onclick="removeAlert(this)">I accept</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

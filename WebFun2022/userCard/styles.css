@@ -1,7 +1,70 @@
-.container {
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Roboto', sans-serif;
+}
+
+.navbar {
+    display: flex;
+    height: 50px;
+    background-color: black;
+    margin-bottom: 10px;
+    justify-content: center;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    padding-right: 150px;
+    width: 400px;
+}
+
+li {
+    list-style-type: none;
+}
+
+li a {
+    padding: 10px 10px 10px 10px;
+    color: lightgray;
+    text-decoration: none;
+}
+
+.active {
+    color: white;
+}
+
+.btn {
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    width: 70px;
+    background-color: rgb(50, 147, 185);
+    color: white;
+    box-shadow: 2px 2px 2px 4px black;
+    margin-left: 180px;
+}
+
+.wrapper {
     display: flex;
     flex-direction: row;
-    align-items: left;
+    justify-content: center;
+}
+
+.container1 {
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     background-color: white;
 }
@@ -16,7 +79,7 @@
 }
 
 .picBlock  {
-    background-color:cyan;
+    background-color: rgb(50, 147, 185);;
     height: 120px;
 }
 
@@ -75,4 +138,156 @@
 
 .edit img {
     height: 20px;
+}
+
+.container2 {
+    display: flex;
+    flex-direction: column;
+}
+
+.box2 {
+    height: 200px;
+    width: 280px;
+    background-color: white;
+    margin-left: 30px;
+    border-style: solid;
+    border-color: slategrey;
+    margin-top: 10px;
+}
+
+.box2-title {
+    height: 60px;
+    background-color: slategrey;
+    display: flex;
+
+}
+
+.box2-title button {
+    border: none;
+    padding: 2px 10px 10px 10px;
+    font-size: 20px;
+    margin: 15px;
+    border-radius: 50%;
+    text-align: center;
+}
+
+.connections-names {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.conn-1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 5px;
+    align-items: center;
+}
+.conn-1 img {
+    height: 40px;
+    border-radius: 50%;
+}
+
+.conn-2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 5px;
+    align-items: center;
+}
+.conn-2 img {
+    height: 40px;
+    border-radius: 50%;
+}
+
+
+.box3 {
+    height: 340px;
+    width: 280px;
+    background-color: white;
+    margin-left: 30px;
+    border-style: solid;
+    border-color: slategrey;
+    margin-top: 40px;
+}
+
+.box3-title {
+    height: 60px;
+    background-color: slategrey;
+    display: flex;
+}
+
+.box3-title button {
+    border: none;
+    padding: 2px 10px 10px 10px;
+    font-size: 20px;
+    margin: 15px;
+    border-radius: 50%;
+    text-align: center;
+}
+
+.box3-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.users {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 10px;
+}
+
+.users h3 {
+    padding-left: 15px;
+}
+
+.users img {
+    height: 40px;
+    border-radius: 50%;
+}
+
+.view-more {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    background-color: white;
+    border-style: solid;
+    border-color: slategrey;
+}
+
+.view-more a {
+    padding-left: 10px;
+}
+
+.box4 {
+    width: 650px;
+    height: 250px;   
+    background-color: white;
+    border-style: solid;
+    border-color: slategrey;
+    margin-top: 30px;
+}
+
+.box4-title {
+    height: 60px;
+    background-color: slategrey;
+    display: flex;
+    padding-left: 30px;
+}
+
+.box4-info {
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+}
+
+.date {
+    color: gray;
+}
+
+.box4-info h4 {
+    margin-top: 10px;
 }

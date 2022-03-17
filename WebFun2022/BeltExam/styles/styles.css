@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#nav-bar {
+    height: 60px;
+    width: 85%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 200px;
+    height: 60px;
+    border-radius: 15px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    background-color: #29AB87;
+    width: 55px;
+    height: 50px;
+    border-radius: 15px;
+}
+
+.site-name {
+    font-weight: 350;
+}
+
+.shopping-cart {
+    width: 55px;
+    height: 50px;
+}
+
+.search-bar {
+    height: 30px;
+    width: 900px;
+    border-radius: 30px;
+    border-color: lightgray;
+    border-style: solid;
+
+}
+
+#menu-bar {
+    height: 50px;
+    width: 85%;
+    border-bottom: 10px solid black;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#menu-bar h5 {
+    font-weight: 200;
+}
+
+#heading {
+    height: 90px;
+    width: 85%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#heading h1 {
+    font-weight: 300;
+}
+
+#menu-discover {
+    height: 350px;
+    width: 85%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#column1 {
+    display: flex;
+    flex-direction: row;
+}
+
+.box1 {
+    background-color: #00AD83;
+    height: 350px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.box1 p {
+    inline-size: 250px;
+    overflow-wrap: break-word;
+    font-size: 30px;
+    color: white;
+}
+
+.discover-arrow {
+    display: flex;
+    align-items: center;
+}
+
+.discover-arrow h4 {
+    inline-size: 150px;
+    font-size: 30px;
+    font-weight: 400;
+    color: white;
+}
+
+.arrow {
+    height: 40px;
+    padding-left: 10px;
+}
+
+.box2 {
+    height: 350px;
+    width: 500px;
+}
+
+.succulents {
+    object-fit: cover;
+    height: 350px;
+    width: 500px;
+}
+
+#column2 {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+}
+
+.box3 {
+    background-color: teal;
+    height: 230px;
+    width: 400px;
+}
+
+.aloeImg {
+    object-fit: cover;
+    height: 230px;
+    width: 400px;
+}
+
+.box4 {
+    background-color: #00AD83;
+    height: 100px;
+    width: 400px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.box4 h4 {
+    color: white;
+    font-size: 20px;
+    padding-left: 30px;
+}
+
+#types-of-plants {
+    background-color: #73dbb8;
+    height: 300px;
+    width: 85%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.plants {
+    height: 200px;
+    width: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.name-succulent {
+    object-fit: cover;
+    height: 200px;
+    width: 180px;
+    border-radius: 50%;
+}
+
+.plants h4 {
+    font-weight: 100;
+}
+
+#alert-message {
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 85%;
+    border: 2px solid black;
+    position: sticky;
+    bottom: 0;
+}
+
+.accept-button {
+    background-color: #00AD83;
+    color: white;
+    height: 35px;
+    width: 80px;
+    font-size: 12px;
+    border: 2px solid black;
+    box-shadow: 2px 2px black;
+}
