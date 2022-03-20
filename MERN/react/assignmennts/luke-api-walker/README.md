@@ -1,6 +1,7 @@
-# Getting Started with Create React App
+# Manipulating Star Wars API with React JS
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is also using elements from [Material UI](https://mui.com/).
 
 ## Available Scripts
 
@@ -11,8 +12,9 @@ In the project directory, you can run:
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Select a category and enter an ID to search for the related star wars information. 
+
+Eg: Category: People, ID; 1
 
 ### `npm test`
 
