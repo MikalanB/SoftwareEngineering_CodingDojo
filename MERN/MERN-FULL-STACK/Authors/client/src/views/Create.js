@@ -31,7 +31,7 @@ const Create = (props) => {
                 history.push("/")
             })
             .catch(err=>{
-                const errorResponse = err.response.data.errors; // Get the errors from err.response.data
+                const errorResponse = err.response.data.err.errors; // Get the errors from err.response.data
                 const errorArr = []; // Define a temp error array to push the messages in
                 for (const key of Object.keys(errorResponse)) { // Loop through all errors and get the messages
                     errorArr.push(errorResponse[key].message)
@@ -42,7 +42,7 @@ const Create = (props) => {
     }
     return (
         <div>
-            <Form form={form} onChangeProp={onChangeHandler} onSubmitProp={onSubmitHandler} errorProp={errors.map((err, index) => <p key={index}>{err}</p>)}/>
+            <Form form={form} onChangeProp={onChangeHandler} onSubmitProp={onSubmitHandler} errorProp={errors}/>
         </div>
     )
 }

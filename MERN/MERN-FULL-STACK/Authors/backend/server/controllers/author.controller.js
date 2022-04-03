@@ -11,7 +11,7 @@ module.exports.findAll = (req, res) => {
 module.exports.createAuthor = (req, res) => {
     Author.create(req.body)
         .then(results => res.json(results))
-        .catch(err => res.status(400).json({ message: "Unable to create author in database."})) 
+        .catch(err => res.status(400).json({ message: "Unable to create author in database.", err})) 
 }
 
 module.exports.findOne = (req, res) => {

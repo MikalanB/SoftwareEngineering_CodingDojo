@@ -7,7 +7,9 @@ const Form = (props) => {
 
     return (
         <form className="mx-auto my-4 w-50" onSubmit={onSubmitProp}>
-            {errorProp}
+            {errorProp.map((err, index) => 
+                <p key={index}>{err}</p>
+            )}
             <div className="form-floating mb-3">
                 <input type="text" className="form-control" id="floatingInput" placeholder="eg. Mikalan" name="name" value={form.name} onChange={onChangeProp}/>
                 <label htmlFor="floatingInput">Name: </label>
