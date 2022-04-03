@@ -6,25 +6,31 @@ import SearchIcon from "@material-ui/icons/Search";
 import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
 import Main from './views/Main';
 import TemporaryDrawer from './components/ShoppingNav';
-import ExpandLessIcon from '@mui/icons-material/ExpandLess';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { TreeItem, TreeView } from '@mui/lab';
 import Box from '@mui/material/Box';
 import YourAccount from './views/YourAccount';
 import CustomerService from './views/CustomerService';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
-import { typography } from '@mui/system';
 import CreateProduct from './views/CreateProduct';
 import Delete from './views/Delete';
 import Update from './views/Update';
 import ViewProduct from './views/ViewProduct';
+import YourCart from './views/YourCart';
+import CartContext from './context/CartContext';
+import { useState } from 'react';
+import Search from './components/Search';
+var store = require('store')
 
 
 function App() {
+
+  const [basket, setBasket] = useState([])
+  const cart = store.get('cart');
+
   return (
     <div className="App">
+      <CartContext.Provider value={{basket, setBasket}}>
       <div className="header">
           
           <Link to="/">
@@ -35,6 +41,7 @@ function App() {
         
 
         <div className="header__search">
+          <Search />
           <input className="header__searchInput" type="text" />
           <SearchIcon className="header__searchIcon" />
         </div>
@@ -62,9 +69,9 @@ function App() {
 
           
             <div className="header__optionBasket">
-              <ShoppingBasketIcon />
+              <Link to="/cart"><ShoppingBasketIcon /></Link>
               <span className="header__optionLineTwo header__basketCount">
-                0
+                {cart?.length}
               </span>
             </div>
     
@@ -115,7 +122,6 @@ function App() {
             </ListItem>
           </List>
         </Box>
-
       </div>
 
         {/* <TreeView
@@ -134,8 +140,7 @@ function App() {
                 </TreeItem>
             </TreeItem>
         </TreeView> */}
-
-
+  
     <Switch>
       <Route exact path="/">
         <Main />
@@ -158,7 +163,12 @@ function App() {
       <Route exact path="/admin/update/:_id">
         <Update />
       </Route>
+
+      <Route exact path="/cart">
+        <YourCart />
+      </Route>
     </Switch>
+    </CartContext.Provider>
     </div>
   );
 }

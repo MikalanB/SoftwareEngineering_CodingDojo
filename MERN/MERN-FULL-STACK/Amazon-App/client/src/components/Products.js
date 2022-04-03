@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Rating from '@mui/material/Rating';
 import {Link} from 'react-router-dom';
+// import { useCart } from "react-use-cart";
 
 const Products = (props) => {
     const [ products, setProducts ] = useState([])

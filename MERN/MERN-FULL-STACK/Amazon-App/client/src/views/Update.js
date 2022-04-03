@@ -32,7 +32,7 @@ const Update = (props) => {
                     category: res.data.category,
                     productImgURL: res.data.productImgURL,
                     rating: res.data.rating,
-                    price: res.data.price,
+                    prime :res.data.prime,
                     quantity: res.data.quantity,
                 })
             })

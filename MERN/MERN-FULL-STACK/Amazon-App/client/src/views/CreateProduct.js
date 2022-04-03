@@ -14,6 +14,7 @@ const CreateProduct = (props) => {
         productImgURL: "",
         rating: 0,
         prime: false,
+        quantity: 1
     });
 
     const history = useHistory();
