@@ -47,9 +47,9 @@ public class CafeJava {
 
         // Sam's order
         if (isReadyOrder2) {
-            System.out.println(customer2 + "'s order is ready! The total is: $" + (lattePrice * 2));
+            System.out.println(customer2 + ", " + readyMessage + " " + displayTotalMessage + (lattePrice * 2));
         } else {
-            System.out.println(customer2 + "'s order is not ready. Total is: $" + (lattePrice * 2));
+            System.out.println(customer2 + ", " + pendingMessage + " " + displayTotalMessage + (lattePrice * 2));
         }
 
         //Jimmy's order
