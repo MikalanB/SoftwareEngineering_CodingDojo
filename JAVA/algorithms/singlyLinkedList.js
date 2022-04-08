@@ -103,6 +103,208 @@ average() {
     return this;
 }
 
+removeBack() {
+    if (this.head == null) {
+        return this;
+    } 
+    let runner = this.head;
+    while (runner.next.next != null) {
+        runner = runner.next
+    }
+    let temp = runner.next.value
+    runner.next = null;
+    console.log(temp)
+    return temp;
+}
+
+/**
+ * Determines whether or not the given search value exists in this list.
+ * - Time: O(?).
+ * - Space: O(?).
+ * @param {any} val The data to search for in the nodes of this list.
+ * @returns {boolean}
+ */
+contains(val) {
+    if (this.head == null) {
+        return this;
+    }
+    let runner = this.head;
+    while (runner.value != val && runner.next != null) {
+        runner = runner.next;
+    }
+
+    if (runner.value != val) {
+        return false;
+    } else {
+        return true;
+    }
+}
+
+/**
+ * Determines whether or not the given search value exists in this list.
+ * - Time: O(?).
+ * - Space: O(?).
+ * @param {any} val The data to search for in the nodes of this list.
+ * @param {?ListNode} current The current node during the traversal of this list
+ *    or null when the end of the list has been reached.
+ * @returns {boolean}
+ */
+containsRecursive(val, current = this.head) {
+    if (current === null) {
+        return false;
+    }
+    if (current.value === val) {
+        return true;
+    }
+
+    return this.containsRecursive(val, current.next);
+}
+
+secondToLast(){
+    if(this.head == null){
+        return null;
+    }
+    if(this.head.next == null){
+        return this.head.data;
+    }
+    let runner = this.head;
+    while(runner.next.next != null){
+        runner = runner.next;
+    }
+    return runner.data;
+}
+
+removeVal(val){
+    if(this.head == null){
+        console.log("You can't remove a value from an empty list!")
+        return; 
+    }
+    if(this.head.data == val){
+        this.removeFromFront();
+        return;
+    }
+    let runner = this.head;
+    while(runner.next != null && runner.next.data != val){
+        runner = runner.next;
+    }
+    if(runner.next == null){
+        console.log("The value was not in the list!");
+        return;
+    }
+    runner.next = runner.next.next;
+}
+
+prepend(targetVal, newVal){
+    if(this.head == null){
+        console.log("Can't prepend to a value that doesn't exist!");
+        return;
+    }
+    if(this.head.data == targetVal){
+        this.addToFront(newVal);
+        return;
+    }
+
+    let runner = this.head;
+    while(runner.next != null && runner.next.data != targetVal){
+        runner = runner.next;
+    }
+
+    if(runner.next == null){
+        console.log("Value was not found in the list.");
+        return;
+    }
+
+    let newNode = new Node(newVal);
+    newNode.next = runner.next;
+    runner.next = newNode;
+
+}
+
+
+/**
+ * Concatenates the nodes of a given list onto the back of this list.
+ * @param {SinglyLinkedList} addList An instance of a different list whose
+ *    whose nodes will be added to the back of this list.
+ * @returns {SinglyLinkedList} This list with the added nodes.
+ */
+concat(addList) {
+    
+}
+
+/**
+ * Finds the node with the smallest number as data and moves it to the front
+ * of this list.
+ * @returns {SinglyLinkedList} This list.
+ */
+moveMinToFront() {
+
+}
+
+// EXTRA
+/**
+ * Splits this list into two lists where the 2nd list starts with the node
+ * that has the given value.
+ * splitOnVal(5) for the list (1=>3=>5=>2=>4) will change list to (1=>3)
+ * and the return value will be a new list containing (5=>2=>4)
+ * @param {any} val The value in the node that the list should be split on.
+ * @returns {SinglyLinkedList} The split list containing the nodes that are
+ *    no longer in this list.
+ */
+splitOnVal(val) {}
+
+// EXTRA
+/**
+ * Recursively finds the maximum integer data of the nodes in this list.
+ * - Time: O(?).
+ * - Space: O(?).
+ * @param {ListNode} runner The start or current node during traversal, or null
+ *    when the end of the list is reached.
+ * @param {ListNode} maxNode Keeps track of the node that contains the current
+ *    max integer as it's data.
+ * @returns {?number} The max int or null if none.
+ */
+recursiveMax(runner = this.head, maxNode = this.head) {
+    if (runner.next === null) {
+        return maxNode;
+    }
+
+    runner = runner.next;
+    if(runner.val > maxNode.val) {
+        maxNode = runner
+    }
+
+    return this.recursiveMax(runner, maxNode)
+}
+
+/**
+ * Retrieves the data of the second to last node in this list.
+ * @returns {any} The data of the second to last node or null if there is no
+ *    second to last node.
+ */
+secondToLast() {
+    
+}
+
+/**
+ * Removes the node that has the matching given val as it's data.
+ * @param {any} val The value to compare to the node's data to find the
+ *    node to be removed.
+ * @returns {boolean} Indicates if a node was removed or not.
+ */
+removeVal(val) {}
+ 
+ // EXTRA
+ /**
+  * Inserts a new node before a node that has the given value as its data.
+  * @param {any} newVal The value to use for the new node that is being added.
+  * @param {any} targetVal The value to use to find the node that the newVal
+  *    should be inserted in front of.
+  * @returns {boolean} To indicate whether the node was pre-pended or not.
+  */
+prepend(newVal, targetVal) {
+    
+}
+
 printValues() {
     // step #0 [EDGE CASE]) handle a case where there is nothing in the list
     if(this.head == null){
@@ -138,11 +340,14 @@ let list=new List();
 list.PushBack(test_data1);
 list.PushBack(test_data2);
 list.PushBack(test_data3);
-// list.insertAtFront(test_data5)
-list.average()
+list.insertAtFront(test_data5)
+list.removeBack(); 
 // list.removeHead()
+console.log(list.containsRecursive(234));
+console.log(list.recursiveMax())
 /* Insert array of nodes into the list: */
 // list.PushBackN(test_data4);
 list.printValues()
+
 /* Iterate our list, so we can see our node values */
 //list.Iterate(value=>console.log(value));
