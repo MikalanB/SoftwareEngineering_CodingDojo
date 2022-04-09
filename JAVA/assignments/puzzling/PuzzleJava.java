@@ -5,7 +5,7 @@ import java.util.Random;
 public class PuzzleJava {
     
     Random randMachine = new Random();
-㉿
+
     public double[] getTenRolls() {
         double[] array = new double[10];
         for (int i = 0; i < array.length; i++) {
@@ -21,13 +21,25 @@ public class PuzzleJava {
         return array[randMachine.nextInt(25)];
     }
 
-    public String[] generatePassword() {
+    public String generatePassword() {
         String[] password = new String[8];
 
         for (int i = 0; i < password.length; i++) {
             password[i] = getRandomLetter();
         }
 
-        return password;
+        //System.out.println(Arrays.toString(password));
+        return Arrays.toString(password);
+    }
+
+    public String getNewPassword(int num) {
+        String [] newPassword = new String[num];
+        
+        for (int i = 0; i < num; i++) {
+            newPassword[i] = getRandomLetter();
+        }
+
+        //System.out.println(Arrays.toString(newPassword));
+        return Arrays.toString(newPassword);
     }
 }
