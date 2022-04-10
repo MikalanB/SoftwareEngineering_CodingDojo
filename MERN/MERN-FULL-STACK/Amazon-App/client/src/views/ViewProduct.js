@@ -4,14 +4,10 @@ import {useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import Rating from '@mui/material/Rating';
 import Divider from '@mui/material/Divider';
-import {Link} from 'react-router-dom';
 import Popover from '@mui/material/Popover';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select';
 import LockIcon from '@mui/icons-material/Lock';
 import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
@@ -31,8 +27,10 @@ const ViewProduct = (props) => {
     
     const { basket, setBasket } = useContext(CartContext);
 
-    function round(value, decimals) {
-        return Number(Math.round(value+'e'+decimals)+'e-'+decimals);
+    function dollarStyle(value){
+        let spl = value.toString().split('.');
+        spl[1] = spl[1].substring(0,2);
+        return "$"+spl.join('.');
     }
 
     const onSubmitHandler = (event) => {
@@ -57,7 +55,7 @@ const ViewProduct = (props) => {
             setBasket(newState);
             store.set('cart', newState);
             const total = newState.reduce((accumulator, object) => {
-                    return accumulator + round((object.price * object.prodQty), 2);
+                    return accumulator + dollarStyle((object.price * object.prodQty), 2);
                 }, 0)
             store.set('total', total);
             }

@@ -9,9 +9,6 @@ var store = require('store')
 
 const YourCart = (props) => {
     const {basket, setBasket} = useContext(CartContext)
-    // const [qty, setQty] = useState({
-    //     qty
-    // });
     var cart = store.get('cart');
     var total = store.get("total")
     
@@ -38,13 +35,15 @@ const YourCart = (props) => {
         store.set('total', subTotal(cart))
     }
 
-    function round(value, decimals) {
-        return Number(Math.round(value+'e'+decimals)+'e-'+decimals);
+    function dollarStyle(value){
+        let spl = value.toString().split('.');
+        spl[1] = spl[1].substring(0,2);
+        return "$"+spl.join('.');
     }
 
     const subTotal = (array) => {
         const total = array.reduce((accumulator, object) => {
-            return accumulator +  round((object.price * object.prodQty), 2);
+            return accumulator +  dollarStyle((object.price * object.prodQty), 2);
         }, 0)
 
         store.set('total', total);
