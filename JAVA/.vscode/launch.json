@@ -1,0 +1,22 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch TestJava",
+            "request": "launch",
+            "mainClass": "assignments.puzzling.TestJava",
+            "projectName": "JAVA_33102d63"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-FirstspringbootdemoApplication<firstspringbootdemo>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.example.firstspringbootdemo.firstspringbootdemo.FirstspringbootdemoApplication",
+            "projectName": "firstspringbootdemo",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
