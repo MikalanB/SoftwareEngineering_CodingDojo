@@ -13,11 +13,6 @@ public class FirstspringbootdemoApplication {
 		SpringApplication.run(FirstspringbootdemoApplication.class, args);
 	}
 
-	// @RequestMapping("/")
-	// public String hello() {
-	// 	return "Hello world!";
-	// }
-
 
 
 }

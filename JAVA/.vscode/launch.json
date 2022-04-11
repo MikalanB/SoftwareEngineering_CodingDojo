@@ -2,6 +2,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch DaikichiroutesApplication",
+            "request": "launch",
+            "mainClass": "com.example.daickichiroutes.daikichiroutes.DaikichiroutesApplication",
+            "projectName": "daikichiroutes"
+        },
+        {
+            "type": "java",
+            "name": "Launch DaikichiroutesApplication",
+            "request": "launch",
+            "mainClass": "SPRINGBOOT.daikichiroutes.src.main.java.com.codingdojo.daikichiroutes.daikichiroutes.DaikichiroutesApplication",
+            "projectName": "JAVA_33102d63"
+        },
+        {
+            "type": "java",
             "name": "Launch TestJava",
             "request": "launch",
             "mainClass": "assignments.puzzling.TestJava",
