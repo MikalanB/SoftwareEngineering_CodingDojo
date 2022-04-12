@@ -18,7 +18,7 @@ public class HopperController {
     
     	// Your code here! Add values to the view model to be rendereds
 
-        model.addAttribute("name", name);
+        model.addAttribute("fullName", name);
         model.addAttribute("itemName", itemName);
         model.addAttribute("price", price);
         model.addAttribute("description", description);

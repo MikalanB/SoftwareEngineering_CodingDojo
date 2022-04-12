@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -10,7 +10,7 @@
     <title>Grace Hopper Receipt</title>
 </head>
 <body>
-    <h1>Customer Name: <c:out value="${name}"></c:out></h1>
+    <h1>Customer Name: <c:out value="${fullName}"></c:out></h1>
 
     <p>Item name: <c:out value="${itemName}"></c:out></p>
     <p>Price: <c:out value="${price}" /></p>
