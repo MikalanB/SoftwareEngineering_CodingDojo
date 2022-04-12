@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch FruityloopsApplication",
+            "request": "launch",
+            "mainClass": "com.example.fruityloops.FruityloopsApplication",
+            "projectName": "fruityloops"
+        },
+        {
+            "type": "java",
             "name": "Launch HoppersreceiptApplication",
             "request": "launch",
             "mainClass": "com.example.hoppersreceipt.HoppersreceiptApplication",

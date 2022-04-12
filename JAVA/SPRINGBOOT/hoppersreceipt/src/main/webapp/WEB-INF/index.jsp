@@ -13,7 +13,7 @@
     <h1>Customer Name: <c:out value="${name}"></c:out></h1>
 
     <p>Item name: <c:out value="${itemName}"></c:out></p>
-    <p>Price: <c:out value="${price}"></c:out></p>
+    <p>Price: <c:out value="${price}" /></p>
     <p>Description: <c:out value="${description}"></c:out></p>
     <p>Vendor: <c:out value="${vendor}"></c:out></p>
 

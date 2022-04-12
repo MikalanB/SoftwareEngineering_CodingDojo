@@ -136,6 +136,75 @@
                 return this.maxRecursive(current.right)
     }
 
+    /**
+     * Determines if this tree contains the given searchVal.
+     * @param {number} searchVal The number to search for in the node's data.
+     * @returns {boolean} Indicates if the searchVal was found.
+     */
+    contains(searchVal) {
+        let count = 0;
+        if (this.root === null) {
+            return null;
+        }
+
+        let current = this.root;
+
+        while (current != null) {
+            count++;
+            if (current.data === searchVal) {
+                console.log(count);
+                return true;
+            }
+            if (current.data > searchVal) {
+                current = current.left;
+            } else {
+                current = current.right;
+            }
+        }
+        console.log(count);
+        return false;
+    }
+
+    /**
+     * Determines if this tree contains the given searchVal.
+     * @param {number} searchVal The number to search for in the node's data.
+     * @returns {boolean} Indicates if the searchVal was found.
+     */
+    containsRecursive(searchVal, current = this.root, count = 0) {
+        console.log(count);
+        if (current === null) {
+            return false;
+        }
+
+        if(current.data == searchVal) {
+            return true;
+        }
+
+        if (current.data > searchVal) {
+            return this.containsRecursive(searchVal, current.left, count++);
+            
+        }
+
+        if (current.data < searchVal) {
+            return this.containsRecursive(searchVal, current.right, count++);
+        }
+    }
+
+    /**
+     * Calculates the range (max - min) from the given startNode.
+     * @param {Node} startNode The node to start from to calculate the range.
+     * @returns {number|null} The range of this tree or a sub tree depending on if the
+     *    startNode is the root or not.
+     */
+    range(startNode = this.root) {
+        if(startNode!=this.root) {
+            let subtree = new BinarySearchTree();
+            subtree.root = startNode;
+            return subtree.max() - subtree.min();
+        }
+        return this.max() - this.min()
+    }
+
     // Logs this tree horizontally with the root on the left.
     print(node = this.root, spaceCnt = 0, spaceIncr = 10) {
         if (!node) {
@@ -249,4 +318,4 @@
     .insert(66)
     .insert(90);
 
-    console.log(fullTree.maxRecursive())
+    console.log(fullTree.range(10))
