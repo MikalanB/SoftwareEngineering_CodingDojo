@@ -2,6 +2,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch HoppersreceiptApplication",
+            "request": "launch",
+            "mainClass": "com.example.hoppersreceipt.HoppersreceiptApplication",
+            "projectName": "hoppersreceipt"
+        },
+        {
+            "type": "java",
+            "name": "Launch HoppersreceiptApplication",
+            "request": "launch",
+            "mainClass": "SPRINGBOOT.hoppersreceipt.src.main.java.com.example.hoppersreceipt.HoppersreceiptApplication",
+            "projectName": "JAVA_33102d63"
+        },
+        {
+            "type": "java",
             "name": "Launch DaikichiroutesApplication",
             "request": "launch",
             "mainClass": "com.example.daickichiroutes.daikichiroutes.DaikichiroutesApplication",
