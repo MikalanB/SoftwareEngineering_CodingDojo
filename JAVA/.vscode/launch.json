@@ -2,6 +2,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch CandyappApplication",
+            "request": "launch",
+            "mainClass": "SPRINGBOOT.candyapp.src.main.java.com.example.candyapp.CandyappApplication",
+            "projectName": "JAVA_33102d63"
+        },
+        {
+            "type": "java",
+            "name": "Launch FullcrudApplication",
+            "request": "launch",
+            "mainClass": "SPRINGBOOT.fullcrud.src.main.java.com.codingdojo.fullcrud.FullcrudApplication",
+            "projectName": "JAVA_33102d63"
+        },
+        {
+            "type": "java",
+            "name": "Launch FormassignmentApplication",
+            "request": "launch",
+            "mainClass": "com.example.formassignment.FormassignmentApplication",
+            "projectName": "formassignment"
+        },
+        {
+            "type": "java",
             "name": "Launch FruityloopsApplication",
             "request": "launch",
             "mainClass": "com.example.fruityloops.FruityloopsApplication",
@@ -52,6 +73,20 @@
             "projectName": "firstspringbootdemo",
             "args": "",
             "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-CounterApplication<counter>",
+            "request": "launch",
+            "mainClass": "com.example.counter.counter.CounterApplication",
+            "projectName": "counter"
+        },
+        {
+            "type": "java",
+            "name": "Launch OmikujiformApplication",
+            "request": "launch",
+            "mainClass": "com.example.omikujiform.omikujiform.OmikujiformApplication",
+            "projectName": "omikujiform"
         }
     ]
 }
