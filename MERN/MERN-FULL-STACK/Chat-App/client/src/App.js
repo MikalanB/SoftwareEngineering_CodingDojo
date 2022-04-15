@@ -1,9 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
-// import Socket from './components/Socket';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { useState, useEffect } from 'react';
 import io from 'socket.io-client';
-
+import {Switch, Route} from 'react-router-dom';
+import Main from './views/Main';
+import Chat from './views/Chat';
 
 function App() {
   const [socket] = useState(() => io(':8000'));
@@ -22,8 +24,14 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Socket Test</h1>
-      <p>{}</p>
+      <Switch>
+        <Route exact path="/">
+          <Main />
+        </Route>
+        <Route exact path="/create/:name">
+          <Chat />
+        </Route>
+      </Switch>
     </div>
   );
 }

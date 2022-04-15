@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import {useParams} from 'react-router-dom';
 import io from 'socket.io-client';
 
 const Chat = (props) => {
@@ -11,7 +12,7 @@ const Chat = (props) => {
     // in the useEffect callback function
     console.log('Is this running?');
     socket.on('Welcome', data => console.log(data));
-
+    socket.io("event_from_client", data => console.log(data));
     // note that we're returning a callback function
     // this ensures that the underlying socket will be closed if App is unmounted
     // this would be more critical if we were creating the socket in a subcomponent
@@ -20,8 +21,7 @@ const Chat = (props) => {
     
     return (
         <div className="App">
-        <h1>Socket Test</h1>
-        <h2></h2>
+        <h1>You got to the chat</h1>
         </div>
     );
 }
