@@ -27,32 +27,17 @@
 
         <h2>Create a new Candy</h2>
 
-        <form:form action="/processCandy" method="post" modelAttribute="candy">
+        <form:form action="/processOwner" method="post" modelAttribute="candy">
             <p>
-                <form:label path="name">Name</form:label>
-                <form:errors path="name"/>
-                <form:input path="name"/>
+                <form:label path="firstName">First Name</form:label>
+                <form:errors path="firstName"/>
+                <form:input path="firstName"/>
             </p>
             <p>
-                <form:label path="brand">Brand</form:label>
-                <form:errors path="brand"/>
-                <form:textarea path="brand"/>
+                <form:label path="lastName">Last Name</form:label>
+                <form:errors path="lastName"/>
+                <form:textarea path="lastName"/>
             </p>
-            <p>
-                <form:label path="price">price</form:label>
-                <form:errors path="price"/>
-                <form:input type="number" path="price"/>
-            </p>
-            <p>
-                <form:label path="rating">Rating</form:label>
-                <form:errors path="rating"/>     
-                <form:input type="number" path="rating"/>
-            </p> 
-            ${allOwners}
-            <select>
-                <c:forEach var="i" items="${allOwners}">
-                    <option value="${i.id}">${i.firstName} ${i.lastName}</option>
-            </select>  
     <input type="submit" value="Submit"/>
 </form:form>  
 

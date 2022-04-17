@@ -3,9 +3,12 @@ package com.example.candyapp.models;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
@@ -50,12 +53,31 @@ public class Candy {
     
     @DateTimeFormat(pattern="yyyy-MM-dd")
     private Date updatedAt;
+
+    // creates many to one relationship with owner class
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="owner_id")
+    private Owner owner;
+    
 	
 
     public Candy() {
     }
     
     
+
+    public Candy(Long id, @NotNull @Size(min = 3, max = 30) String name, @NotNull @Size(min = 3, max = 15) String brand,
+    @NotNull @Range(min = 1, max = 10) Integer rating, @NotNull @Range(min = 1, max = 10) Integer price, Date createdAt,
+    Date updatedAt, Owner owner) {
+        this.id = id;
+        this.name = name;
+        this.brand = brand;
+        this.rating = rating;
+        this.price = price;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
+        this.owner = owner;
+    }
     
 	public Candy(@NotNull @Size(min = 3, max = 30) String name, @NotNull @Size(min = 3, max = 15) String brand,
 			@NotNull @Range(min = 1, max = 10) Integer rating, @NotNull @Range(min = 1, max = 10) Integer price) {
@@ -137,6 +159,15 @@ public class Candy {
     public void setUpdatedAt(Date updatedAt) {
         this.updatedAt = updatedAt;
     }
+
+    public Owner getOwner() {
+        return this.owner;
+    }
+
+    public void setOwner(Owner owner) {
+        this.owner = owner;
+    }
+
 
     @PrePersist
     protected void onCreate(){

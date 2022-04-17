@@ -3,7 +3,9 @@ package com.example.candyapp.controllers;
 import javax.validation.Valid;
 
 import com.example.candyapp.models.Candy;
+import com.example.candyapp.models.Owner;
 import com.example.candyapp.services.CandyService;
+import com.example.candyapp.services.OwnerService;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,18 +14,18 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class HomeController {
 
     //injecting our candy service
     private final CandyService candyService;
+    private final OwnerService ownerService;
 
-    public HomeController(CandyService candyService) {
+    public HomeController(CandyService candyService, OwnerService ownerService) {
         super();
         this.candyService = candyService;
+        this.ownerService = ownerService;
     }
     
      //Route to show all candies
@@ -39,8 +41,15 @@ public class HomeController {
 
     //Route to make candy
     @GetMapping(value = "/newCandy")
-    public String newCandy(@ModelAttribute("candy") Candy candy ) {
+    public String newCandy(@ModelAttribute("candy") Candy candy, Model model) {
+
+        model.addAttribute("allOwners", ownerService.allOwners());
         return "newCandy";
+    }
+
+    @GetMapping(value = "/newOwner")
+    public String newOwner(@ModelAttribute("owner") Owner owner ) {
+        return "newOwner";
     }
 
     //post to process makingof candy
@@ -50,6 +59,17 @@ public class HomeController {
             return "newCandy";
         } else {
             candyService.createCandy(candy);
+            return "redirect:/dashboard";
+        }
+    }
+
+    //ppost to process making of owner
+    @PostMapping("/processOwner")
+    public String processOwner(@Valid @ModelAttribute("owner") Owner owner, BindingResult result, @PathVariable("id") Long id) {
+        if (result.hasErrors()) {
+            return "newOwner";
+        } else {
+            ownerService.createOwner(owner);
             return "redirect:/dashboard";
         }
     }
