@@ -31,6 +31,7 @@ pageEncoding="UTF-8"%>
                     <td>Expenses</td>
                     <td>Vendor</td>
                     <td>Amount</td>
+                    <td>Action</td>
                 </tr>
             </thead>
             <tbody>
@@ -39,6 +40,7 @@ pageEncoding="UTF-8"%>
                         <td>${expense.name}</td>
                         <td>${expense.vendor}</td>
                         <td>$${expense.amount}</td>
+                        <td><a href="/expenses/${expense.id}">Edit</a></td>
                     </tr>
                 </c:forEach>
             </tbody>

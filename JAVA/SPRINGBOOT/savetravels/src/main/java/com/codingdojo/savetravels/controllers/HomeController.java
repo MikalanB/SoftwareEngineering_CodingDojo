@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 
 @Controller
 public class HomeController {
@@ -39,4 +40,20 @@ public class HomeController {
                 return "redirect:/expenses";
             }
         }
+
+    @GetMapping("/expenses/{id}")
+    public String showExpense(@PathVariable("id") Long id, Model model) {
+        model.addAttribute("expense", expenseService.findById(id));
+        return "edit";
+    }
+
+    @PutMapping("/processUpdate/{id}")
+    public String processUpdate(@PathVariable("id") Long id, @Valid @ModelAttribute("expense") Expenses expense, BindingResult result, Model model) {
+        if (result.hasErrors()) {
+            return "edit";
+        } else {
+            expenseService.updateExpense(expense);
+            return "redirect:/expenses";
+        }
+    }
 }
