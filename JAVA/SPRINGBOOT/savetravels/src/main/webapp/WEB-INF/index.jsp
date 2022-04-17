@@ -37,10 +37,11 @@ pageEncoding="UTF-8"%>
             <tbody>
                 <c:forEach items="${allExpenses}" var="expense">
                     <tr>
-                        <td>${expense.name}</td>
+                        <td> <a href="/expenses/show/${expense.id}">${expense.name}</a></td>
                         <td>${expense.vendor}</td>
                         <td>$${expense.amount}</td>
                         <td><a href="/expenses/${expense.id}">Edit</a></td>
+                        <td><a href="/expenses/delete/${expense.id}" class="btn btn-danger">Delete</a></td>
                     </tr>
                 </c:forEach>
             </tbody>

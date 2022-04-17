@@ -24,7 +24,7 @@
 <body>
     <div class="container"> <!-- Beginning of Container -->
 
-        <h1>Edit</h1>
+        <h1>Edit Expense</h1>
 
         <form:form action="/processUpdate/${expense.id}" method="post" modelAttribute="expense">
             <input type="hidden" value="put" name="_method"/>

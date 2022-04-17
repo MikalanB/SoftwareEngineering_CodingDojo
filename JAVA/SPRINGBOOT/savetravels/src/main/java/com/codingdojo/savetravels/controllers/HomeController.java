@@ -41,12 +41,14 @@ public class HomeController {
             }
         }
 
+    //
     @GetMapping("/expenses/{id}")
     public String showExpense(@PathVariable("id") Long id, Model model) {
         model.addAttribute("expense", expenseService.findById(id));
         return "edit";
     }
 
+    // Update expense
     @PutMapping("/processUpdate/{id}")
     public String processUpdate(@PathVariable("id") Long id, @Valid @ModelAttribute("expense") Expenses expense, BindingResult result, Model model) {
         if (result.hasErrors()) {
@@ -56,4 +58,20 @@ public class HomeController {
             return "redirect:/expenses";
         }
     }
+
+    //show one expense
+    @GetMapping("/expenses/show/{id}")
+    public String showOneExpense(@PathVariable("id") Long id, Model model) {
+        model.addAttribute("expense", expenseService.findById(id));
+        return "show";
+    }
+
+    //delete expense
+    @GetMapping("/expenses/delete/{id}")
+    public String deleteExpense(@PathVariable("id") Long id) {
+        expenseService.deleteExpense(id);
+        return "redirect:/expenses";
+    }
+
+
 }
