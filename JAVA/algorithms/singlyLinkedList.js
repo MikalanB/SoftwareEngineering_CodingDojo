@@ -115,7 +115,7 @@ removeBack() {
     runner.next = null;
     console.log(temp)
     return temp;
-}
+} 
 
 /**
  * Determines whether or not the given search value exists in this list.
@@ -228,7 +228,17 @@ prepend(targetVal, newVal){
  * @returns {SinglyLinkedList} This list with the added nodes.
  */
 concat(addList) {
-    
+    if (addList.head == null) {
+        return this;
+    }
+
+    let runner = this.head;
+    while (runner.next != null) {
+        runner = runner.next;
+    }
+    runner.next = addList.head;
+
+    return this;
 }
 
 /**
@@ -237,7 +247,25 @@ concat(addList) {
  * @returns {SinglyLinkedList} This list.
  */
 moveMinToFront() {
+    if (this.head == null) {
+        return this;
+    }
 
+    let runner = this.head;
+    let min = this.head.data;
+    let minNode = this.head;
+    while (runner.next != null) {
+        if (runner.next.data < min) {
+            min = runner.next.data;
+            minNode = runner.next;
+        }
+        runner = runner.next;
+    }
+
+    minNode.next = this.head.next;
+    this.head = minNode;
+
+    return this;
 }
 
 // EXTRA
@@ -250,7 +278,27 @@ moveMinToFront() {
  * @returns {SinglyLinkedList} The split list containing the nodes that are
  *    no longer in this list.
  */
-splitOnVal(val) {}
+splitOnVal(val) {
+    if (this.head == null) {
+        return this;
+    }
+
+    let runner = this.head;
+    while (runner.next != null && runner.next.data != val) {
+        runner = runner.next;
+    }
+
+    if (runner.next == null) {
+        console.log("Value was not found in the list.");
+        return this;
+    }
+
+    let newList = new SinglyLinkedList();
+    newList.head = runner.next;
+    runner.next = null;
+
+    return newList;
+}
 
 // EXTRA
 /**
@@ -303,6 +351,24 @@ removeVal(val) {}
   */
 prepend(newVal, targetVal) {
     
+}
+
+reverse() {
+
+}
+
+
+removeAllNegatives() {}
+
+hasLoop() { 
+    if (this.head == null) {
+        return false;
+    }
+
+    let runner = this.head;
+    while (runner.next != null) {
+
+
 }
 
 printValues() {

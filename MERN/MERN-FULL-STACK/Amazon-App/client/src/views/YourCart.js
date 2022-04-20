@@ -35,15 +35,14 @@ const YourCart = (props) => {
         store.set('total', subTotal(cart))
     }
 
-    function dollarStyle(value){
-        let spl = value.toString().split('.');
-        spl[1] = spl[1].substring(0,2);
-        return "$"+spl.join('.');
+    function round(num, decimalPlaces = 2) {
+        num = Math.round(num + "e" + decimalPlaces);
+        return Number(num + "e" + -decimalPlaces);
     }
 
     const subTotal = (array) => {
         const total = array.reduce((accumulator, object) => {
-            return accumulator +  dollarStyle((object.price * object.prodQty), 2);
+            return accumulator +  round((object.price * object.prodQty), 2);
         }, 0)
 
         store.set('total', total);

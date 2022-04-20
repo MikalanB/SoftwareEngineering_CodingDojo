@@ -16,7 +16,7 @@ const OrderSchema = new mongoose.Schema({
     },
 
     deliveryAddress: {
-        type: String,
+        type: Array,
         required: [true, "A Delivery Address has to be provided."]
     },
 

@@ -1,0 +1,35 @@
+({
+    name: "Mikalan Ballentine",
+     home_state: "Kingston", 
+     lucky_number: 21, 
+     birthday: {month: 03, day: 21, year: 1999}
+    
+    })
+({
+    name: "Luke Blair",
+     home_state: "Kingston", 
+     lucky_number: 30, 
+     birthday: {month: 01, day: 29, year: 1993}
+    
+    })
+({
+    name: "Kianna Freeman",
+     home_state: "Kingston", 
+     lucky_number: 11, 
+     birthday: {month: 05, day: 06, year: 2000}
+    
+    })
+({
+    name: "Stella Njoroge",
+     home_state: "Nairobi", 
+     lucky_number: 7, 
+     birthday: {month: 11, day: 13, year: 1998}
+    
+    })
+({
+    name: "Jacob Mckenzie",
+     home_state: "South Orange", 
+     lucky_number: 20, 
+     birthday: {month: 01, day: 01, year: 2000}
+    
+    })
