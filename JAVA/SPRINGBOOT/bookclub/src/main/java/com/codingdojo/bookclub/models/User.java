@@ -5,18 +5,17 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-//import javax.persistence.FetchType;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-//import javax.persistence.OneToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import org.springframework.format.annotation.DateTimeFormat;
@@ -54,10 +53,13 @@ public class User {
     @DateTimeFormat(pattern="yyyy-MM-dd")
     private Date updatedAt;
 
+    @OneToMany(mappedBy="user", fetch = FetchType.LAZY)
+    private List<Book> books;
+
     public User() {
     }
 
-    public User(@NotEmpty @Size(min = 3, message = "First name must be at least 3 characters") String username,
+    public User(@NotEmpty @Size(min = 3, message = "User name must be at least 3 characters") String username,
             @NotEmpty @Email(message = "Email must be valid") String email,
             @NotEmpty @Size(min = 8, max = 128, message = "Password must be between 8 and 128 characters") String password,
             @NotEmpty String confirmPassword) {
@@ -67,7 +69,7 @@ public class User {
         this.confirmPassword = confirmPassword;
     }
 
-    public User(@NotEmpty @Size(min = 2, message = "First name must be at least 3 characters") String username,
+    public User(@NotEmpty @Size(min = 2, message = "User name must be at least 3 characters") String username,
             @NotEmpty @Email(message = "Email must be valid") String email,
             @NotEmpty @Size(min = 8, max = 128, message = "Password must be between 8 and 128 characters") String password,
             @NotEmpty String confirmPassword, Date createdAt, Date updatedAt) {
@@ -79,24 +81,18 @@ public class User {
         this.updatedAt = updatedAt;
     }
 
-    // public User (@NotEmpty @Size(min = 2, message = "First name must be at least 2 characters") String firstName,
-    //         @NotEmpty @Size(min = 2, message = "Last name must be at least 2 characters") String lastName,
-    //         @NotEmpty @Email(message = "Email must be valid") String email,
-    //         @NotEmpty @Size(min = 8, max = 128, message = "Password must be between 8 and 128 characters") String password,
-    //         @NotEmpty String confirmPassword, Date createdAt, Date updatedAt, List<Plant> plants) {
-    //     this.username = username;
-    //     this.email = email;
-    //     this.password = password;
-    //     this.confirmPassword = confirmPassword;
-    //     this.createdAt = createdAt;
-    //     this.updatedAt = updatedAt;
-    //     this.plants = plants;
-    // }
-
-
-
-    //need to add one to many with palnts
-    // remember to update getters and setters
+    public User (@NotEmpty @Size(min = 2, message = "First name must be at least 2 characters") String username,
+            @NotEmpty @Email(message = "Email must be valid") String email,
+            @NotEmpty @Size(min = 8, max = 128, message = "Password must be between 8 and 128 characters") String password,
+            @NotEmpty String confirmPassword, Date createdAt, Date updatedAt, List<Book> books) {
+        this.username = username;
+        this.email = email;
+        this.password = password;
+        this.confirmPassword = confirmPassword;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
+        this.books = books;
+    }
 
 
     public Long getId() {
@@ -114,7 +110,6 @@ public class User {
     public void setUsername(String username) {
         this.username = username;
     }
-
 
     public String getEmail() {
         return this.email;
@@ -155,6 +150,15 @@ public class User {
     public void setUpdatedAt(Date updatedAt) {
         this.updatedAt = updatedAt;
     }
+
+    public List<Book> getBooks() {
+        return this.books;
+    }
+
+    public void setBooks(List<Book> books) {
+        this.books = books;
+    }
+
 
 
     @PrePersist

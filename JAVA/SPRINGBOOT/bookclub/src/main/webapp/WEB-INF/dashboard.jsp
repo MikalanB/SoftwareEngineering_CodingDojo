@@ -19,11 +19,43 @@
     rel="stylesheet" 
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" 
     crossorigin="anonymous">
-
+<link rel="stylesheet" href="/css/dashboard.css" type="text/css">
 </head>
 <body>
     <div class="container"> <!-- Beginning of Container -->
-        <h1>Welcome ${user.username} to the dashboard</h1>
+        <div class="header">
+            <h1>Welcome ${user.username}</h1>
+            <a href="/logout" class="btn btn-light">Logout</a>
+        </div>
+        <div class="header">
+            <h5>Books from everyone's shelves</h5>
+            <a href="/newBook" class="btn btn-light">Add a book to my shelf</a>
+        </div>
+
+        <div class="wrapper">
+            <table class="table table-striped table-hover ">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Title</th>
+                        <th>Author Name</th>
+                        <th>Posted By</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <c:forEach items="${allBooks}" var="book">
+                        <tr>
+                            <td>${book.id}</td>
+                            <td><a href="/book/${book.id}">${book.title}</a></td>
+                            <td>${book.author}</td>
+                            <td>${book.user.username}</td>
+                        </tr>
+                    </c:forEach>
+                </tbody>
+            </table>
+        </div>
+        
+        
     </div> <!-- End of Container -->
 </body>
 </html>

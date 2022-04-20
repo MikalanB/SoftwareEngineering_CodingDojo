@@ -1,0 +1,26 @@
+body {
+    background-color: #E9D5DA;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+    margin-top: 20px;
+}
+
+.btn {
+    height: 40px;
+}
+
+.username {
+    color: red;
+}
+
+.book-title {
+    color: #827397;
+}
+
+.book-author {
+    color: greenyellow;
+}
