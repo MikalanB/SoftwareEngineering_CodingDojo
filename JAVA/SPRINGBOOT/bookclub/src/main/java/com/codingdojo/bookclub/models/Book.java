@@ -16,6 +16,8 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.context.properties.bind.DefaultValue;
 import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
@@ -38,6 +40,8 @@ public class Book {
     @Size(min=3, message="Thoughts must be at least 3 characters")
     private String thoughts;
 
+    private Boolean status = false;
+
     // This will not allow the createdAt column to be updated after creation
 	@Column(updatable=false)
     @DateTimeFormat(pattern="yyyy-MM-dd")
@@ -56,10 +60,11 @@ public class Book {
     public Book(@NotEmpty @Size(min = 3, message = "Title must be at least 3 characters") String title,
                 @NotEmpty @Size(min = 3, message = "Author must be at least 3 characters") String author,
                 @NotEmpty @Size(min = 3, message = "Thoughts must be at least 3 characters") String thoughts,
-                User user) {
+                Boolean status, User user) {
         this.title = title;
         this.author = author;
         this.thoughts = thoughts;
+        this.status = status;
         this.user = user;
     }
 
@@ -104,6 +109,14 @@ public class Book {
         this.thoughts = thoughts;
     }
 
+    public Boolean getStatus() {
+        return this.status;
+    }
+
+    public void setStatus(Boolean status) {
+        this.status = status;
+    }
+
     public Date getCreatedAt() {
         return this.createdAt;
     }
@@ -128,11 +141,6 @@ public class Book {
         this.user = user;
     }
 
-    @PrePersist
-    protected void onCreate(){
-        this.createdAt = new Date();
-    }
-	
 	
 	@PreUpdate
     protected void onUpdate(){

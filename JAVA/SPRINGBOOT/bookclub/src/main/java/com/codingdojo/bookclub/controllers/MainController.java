@@ -54,11 +54,11 @@ public class MainController {
 
     @PostMapping("/login")
     public String login(@Valid @ModelAttribute("newLogin") LoginUser newLogin, BindingResult result, Model model, HttpSession session) {
+        User user = userService.login(newLogin, result);
         if (result.hasErrors()) {
             model.addAttribute("newUser", new User());
             return "index";
         } else {
-            User user = userService.login(newLogin, result);
             session.setAttribute("user_id", user.getId());
             return "redirect:/dashboard";
         }
@@ -147,5 +147,13 @@ public class MainController {
     }
 
 
+    // borrow a book/ update book status
+    @PutMapping("/book/borrow/{id}/{status}")
+    public String borrowBook(@ModelAttribute("book") Book book, @ModelAttribute("id") Long id, @ModelAttribute("status") Boolean status, Model model, HttpSession session) {
+        book.setUser(userService.oneUser((Long) session.getAttribute("user_id")));
+        book.setStatus(status);
+        bookService.update(book);
+        return "redirect:/dashboard";
+    }
 
 }

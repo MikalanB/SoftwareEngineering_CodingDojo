@@ -39,7 +39,8 @@
                         <th>ID</th>
                         <th>Title</th>
                         <th>Author Name</th>
-                        <th>Posted By</th>
+                        <th>Owner/th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -49,6 +50,25 @@
                             <td><a href="/book/${book.id}">${book.title}</a></td>
                             <td>${book.author}</td>
                             <td>${book.user.username}</td>
+                            <c:choose>
+                                <c:when test="${book.user.id == user.id}">
+                                    <td>
+                                        <a href="/book/${book.id}/edit">Edit</a>
+                                        <a href="/book/${book.id}/delete">Delete</a>
+                                    </td>
+                                </c:when>
+                                <c:when test="${book.status == false}">
+                                    <td>
+                                        <a href="/book/borrow/${book.id}/true">Borrow</a>
+                                    </td>
+                                </c:when>
+                                <c:otherwise>
+                                    <td>
+                                        <a href="/book/${book.id}/true">Borrow</a>
+                                    </td>
+                                </c:otherwise>
+                            </c:choose>
+                            <!-- <td><a href="/book/borrow/${book.id}/true">borrow</a></td> -->
                         </tr>
                     </c:forEach>
                 </tbody>
